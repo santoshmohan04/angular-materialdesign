@@ -8,7 +8,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-md-elevated-button {
+button {
   margin: 5px;
   padding: 10px 20px;
   font-size: 1rem;
@@ -16,7 +16,7 @@ md-elevated-button {
   cursor: pointer;
 }
 
-md-elevated-button:disabled {
+button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }

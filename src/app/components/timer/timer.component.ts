@@ -1,11 +1,10 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy } from '@angular/core';
-import "@material/web/button/elevated-button";
+import { Component, OnDestroy } from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-timer',
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './timer.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   styleUrl: './timer.component.css'
 })
 export class TimerComponent implements OnDestroy {

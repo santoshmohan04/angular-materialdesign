@@ -1,9 +1,8 @@
 <div class="stopwatch">
   <h2>{{ formatTime() }}</h2>
-  <md-elevated-button (click)="startStop()">{{
+  <button mat-raised-button (click)="startStop()">{{
     isRunning ? 'Pause' : 'Start'
-  }}</md-elevated-button>
-  <md-elevated-button (click)="reset()" [disabled]="time === 0"
-    >Reset</md-elevated-button
-  >
+  }}</button>
+  <button mat-raised-button (click)="reset()" [disabled]="time === 0"
+  >Reset</button>
 </div>
