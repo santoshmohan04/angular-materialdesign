@@ -1,0 +1,22 @@
+.stopwatch {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+md-elevated-button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+md-elevated-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
