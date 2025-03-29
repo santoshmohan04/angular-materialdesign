@@ -1,0 +1,48 @@
+<mat-card>
+  <h1>Todo List</h1>
+  <mat-form-field appearance="fill">
+    <mat-label>New Task</mat-label>
+    <input matInput [(ngModel)]="newTask" placeholder="Add a new task" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="addbtn" (click)="addTask()">
+    Add
+  </button>
+  <mat-list>
+    <mat-list-item *ngFor="let task of tasks; let i = index">
+      <mat-checkbox [(ngModel)]="task.completed" *ngIf="!task.isEditing">
+        <span [ngClass]="{'strikethrough': task.completed }">{{
+          task.name
+        }}</span>
+      </mat-checkbox>
+
+      <!-- Edit Mode -->
+      <mat-form-field
+        *ngIf="task.isEditing"
+        appearance="fill"
+        style="width: 70%"
+      >
+        <input matInput [(ngModel)]="task.name" />
+      </mat-form-field>
+
+      <button
+        mat-button
+        color="primary"
+        (click)="editTask(task)"
+        *ngIf="!task.isEditing && !task.completed"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-button
+        color="accent"
+        (click)="saveTask(task)"
+        *ngIf="task.isEditing"
+      >
+        Save
+      </button>
+      <button mat-button color="warn" (click)="deleteTask(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
